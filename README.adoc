@@ -1,4 +1,4 @@
-= http_post_file
+= Http Post File
 
 == Objeto
 Criar uma requisição HTTP POST e enviar um arquivo para um determinado endereço.
