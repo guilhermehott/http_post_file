@@ -1,4 +1,5 @@
 = Http Post File
+Guilherme Hott <guilhermehott@gmail.com>
 
 == Objeto
 Criar uma requisição HTTP POST e enviar um arquivo para um determinado endereço.
