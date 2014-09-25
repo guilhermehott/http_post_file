@@ -4,9 +4,9 @@
 Criar uma requisição HTTP POST e enviar um arquivo para um determinado endereço.
 
 == Links
-http://www.radford.edu/~mhtay/CPSC120/VIM_Editor_Commands.htm[Comandos do VIM]
-http://stackoverflow.com/questions/376101/setting-jvm-jre-to-use-windows-proxy-automatically[setting-jvm-jre-to-use-windows-proxy-automatically]
-http://www.mkyong.com/java/apache-httpclient-examples/[apache-httpclient-examples]
-http://www.tutorialspoint.com/javaexamples/net_poxy.htm[get proxy]
-https://help.github.com/articles/adding-a-remote[adding-a-remote]
-http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc quicj reference]
+http://www.radford.edu/~mhtay/CPSC120/VIM_Editor_Commands.htm[Comandos do VIM]+
+http://stackoverflow.com/questions/376101/setting-jvm-jre-to-use-windows-proxy-automatically[setting-jvm-jre-to-use-windows-proxy-automatically]+
+http://www.mkyong.com/java/apache-httpclient-examples/[apache-httpclient-examples]+
+http://www.tutorialspoint.com/javaexamples/net_poxy.htm[get proxy+
+https://help.github.com/articles/adding-a-remote[adding-a-remote]+
+http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc quick reference]+
