@@ -1,4 +1,4 @@
-=http_post_file
+= http_post_file
 
 
 Objeto
