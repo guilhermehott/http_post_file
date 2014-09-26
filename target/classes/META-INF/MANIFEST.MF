@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Built-By: guilherme.hott
-Build-Jdk: 1.7.0_03
+Built-By: Guilherme
+Build-Jdk: 1.7.0_51
 Created-By: Maven Integration for Eclipse
 
