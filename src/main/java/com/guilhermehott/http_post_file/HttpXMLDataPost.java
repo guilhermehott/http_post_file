@@ -5,17 +5,11 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpHost;
-import org.apache.http.auth.AuthScope;
-import org.apache.http.auth.UsernamePasswordCredentials;
-import org.apache.http.client.CredentialsProvider;
-import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.entity.InputStreamEntity;
-import org.apache.http.impl.client.BasicCredentialsProvider;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 
 /**
@@ -26,7 +20,7 @@ public class HttpXMLDataPost {
 	static Properties props;
 
 	public static void main(String[] args) {
-		String fileName = "C:/storage/teste.xml";
+		String fileName = "C:/Users/Guilherme/Downloads/CAMMINARE - NFE EM XML/teste.xml";
 
 		boolean success = XMLDataPost(fileName);
 		System.out.println(success);
@@ -35,22 +29,13 @@ public class HttpXMLDataPost {
 	private static boolean XMLDataPost(String fileName) {
 
 		boolean success = false;
-		CredentialsProvider credsProvider = new BasicCredentialsProvider();
-		credsProvider.setCredentials(new AuthScope("proxybsb.cast.com.br", 3128), new UsernamePasswordCredentials("guilherme.hott",
-				"getOcwcd14"));
-		CloseableHttpClient httpclient = HttpClients.custom().setDefaultCredentialsProvider(credsProvider).build();
 
 		try {
 
-			HttpHost target = new HttpHost("http://www.servidor2.danfeonline.com.br");
-			HttpHost proxy = new HttpHost("proxybsb.cast.com.br", 3128);
+			HttpClient httpclient = HttpClientBuilder.create().build();
 
-			RequestConfig config = RequestConfig.custom().setProxy(proxy).build();
-
-			// HttpClient httpclient = HttpClientBuilder.create().build();
-
-			HttpPost httpPost = new HttpPost("/");
-			httpPost.setConfig(config);
+//			HttpPost httpPost = new HttpPost("http://www.servidor2.danfeonline.com.br");
+			HttpGet httpGet = new HttpGet("http://www.servidor2.danfeonline.com.br");
 
 			File file = new File(fileName.trim());
 
@@ -58,10 +43,10 @@ public class HttpXMLDataPost {
 			reqEntity.setContentType("multipart/form-data");
 			reqEntity.setChunked(true);
 
-			httpPost.setEntity(reqEntity);
+//			httpPost.setEntity(reqEntity);
 
-			System.out.println("Executing request " + httpPost.getRequestLine());
-			CloseableHttpResponse response = httpclient.execute(target, httpPost);
+			System.out.println("Executing request " + httpGet.getRequestLine());
+			CloseableHttpResponse response = (CloseableHttpResponse) httpclient.execute(httpGet);
 			HttpEntity resEntity = response.getEntity();
 
 			System.out.println("----------------------------------------");
@@ -74,7 +59,6 @@ public class HttpXMLDataPost {
 				System.out.println("Chunked?: " + resEntity.isChunked());
 			}
 			EntityUtils.consume(resEntity);
-			httpclient.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
