@@ -48,7 +48,7 @@ public class ClientProxyAuthentication {
         CredentialsProvider credsProvider = new BasicCredentialsProvider();
         credsProvider.setCredentials(
                 new AuthScope("proxybsb.cast.com.br", 3128),
-                new UsernamePasswordCredentials("guilherme.hott",
+                new UsernamePasswordCredentials("guilherme.hott@cast.com.br",
         				"getOcwcd14"));
         CloseableHttpClient httpclient = HttpClients.custom()
                 .setDefaultCredentialsProvider(credsProvider).build();
